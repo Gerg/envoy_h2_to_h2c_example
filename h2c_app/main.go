@@ -12,7 +12,7 @@ func main() {
 	h2s := &http2.Server{}
 
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, %v, http: %v", r.URL.Path, r.TLS == nil)
+		fmt.Fprintf(w, "Hello, %v, HTTP Version: %v", r.URL.Path, r.Proto)
 	})
 
 	server := &http.Server{
